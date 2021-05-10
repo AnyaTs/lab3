@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <string.h>
+#define SOURCE_STRING "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+
+int main(void) {
+    char *str = SOURCE_STRING;
+    printf("%s\n", str);
+    
+    size_t len = strlen(str); 
+    char *t = str + len - 1; 
+    while (t >= str) {
+        printf("%c", *t);   
+        t = t - 1;
+    }
+}
