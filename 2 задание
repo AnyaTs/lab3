@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main()
+{
+    char alph[27];
+    int i;
+    char *p;
+    p = alph;     
+
+       
+
+    for(i = 0;i < 26;i++)
+    {
+        *p=i+'A';
+        p++;
+    }
+    p = alph;
+
+    printf("Алфавит в прямом порядке: ");
+    for(i = 0;i < 26; i++)
+    {
+       printf("%c ", *(p+i));
+        
+    }
+    
+    for(i=26 ;i >=0 ;i--)
+    {
+        *(p+i)=i+'A';
+        
+    }
+    p = alph;
+
+    printf(" \t Алфавит в обратном порядке: ");
+    for(i = 26 ;i >= 0 ; i--)
+    {
+       printf("%c ", *(p+i));
+        
+    }
+    
+}
