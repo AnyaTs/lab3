@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <string.h>
+
+int palyndrome(char str[])
+{   
+    int i, len;
+    int a = 0;
+    len = strlen(str);
+    char *start = str;
+    char *end = &str[len-1];
+
+    for(i = 0; i <= (len-1)/2 ; i++)
+    {
+        if( *(start+i) != *(end-i))
+        {   
+            a = 1;
+        }
+        
+    }
+    if (a) {
+        printf("0 \n");
+    
+    }
+    else {
+        printf("1 \n");
+    }
+}
+int main()
+
+{
+
+    palyndrome("rara");
+
+    palyndrome("aaffaa");
+
+    palyndrome("rercbr");
+
+    return 0;
+
+}
