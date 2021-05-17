@@ -1,1 +1,49 @@
 
+#include <stdio.h>
+
+int main()
+{   
+    int i;
+    int arr1[] = {8, 6, 7, 9};
+    int arr2[] = {1, 2, 3};
+    int *q = arr1;
+    int *p = arr2;
+    int f1 = 0;
+    int f2 = 0;
+    int f3 = 0;
+    int len1 = sizeof(arr1) / sizeof(int);
+    int len2 = sizeof(arr2) / sizeof(int);
+    int ln1 = len2-len1;
+    int ln2 = len1-len2;
+    
+    
+    for (i = 0; i < ln1+1; i++) {
+        if (*(q+i) == *(p+i+ln1)) {
+            f1 = 1;
+        }
+    }
+  
+    for (i = 0; i < ln2+1; i++) {
+        if (*(q+i+ln2) == *(p+i)) {
+            f2 = 2;
+        }
+    }
+   
+    for (i = 0; i < len1+1; i++) {
+        if (*(q+i) == *(p+i)) {
+            f3 = 3 ;
+        }
+    }
+    if (f1 == 1) {
+        printf("1 ");
+    }
+    if (f2 == 2) {
+        printf("2 ");
+    }
+    if (f3 == 3) {
+        printf("0 ");
+    }
+    else 
+        printf("-1");
+    
+}
